@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+			integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="task.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="nav">
+            <div class="home icon-container" onclick="window.location = 'index.html'">
+                <i class="fa-solid fa-house home-icon icon"></i>
+                <span class="home-title">Home</span>
+            </div>
+            <div
+                class="upcoming icon-container"
+                onclick="window.location ='task.html' ">
+                <i class="fa-solid fa-clock upcoming-icon icon"></i
+                ><span class="upcoming-title"> Add Tasks</span>
+            </div>
+        </div>
+        <div class="task-container">
+            <div class="task-float">
+                <div class="task-header">
+                    Add a Task
+                </div>
+                <form class="form">
+                    <div class="task-date input-field">
+                        Task Date <input type="date"  class="task-date-input input"> 
+                    </div>
+                    <div class="task-title input-field">
+                        Task Title <input type="text" placeholder="enter task title....." class="input"> 
+                    </div>
+                    <div class ="task-desc input-field">
+                        Task details  <textarea class="input"></textarea>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+			integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer" />
+
+		<title>To-Do List</title>
+		<link rel="stylesheet" href="./style.css" />
+	</head>
+	<body>
+		<div class="container">
+			<div class="nav">
+				<div class="home icon-container">
+					<i class="fa-solid fa-house home-icon icon"></i>
+					<span class="home-title">Home</span>
+				</div>
+				<div
+					class="upcoming icon-container"
+					onclick="window.location ='task.html' ">
+					<i class="fa-solid fa-clock upcoming-icon icon"></i
+					><span class="upcoming-title"> Add Tasks</span>
+				</div>
+			</div>
+			<div class="main-page">
+				<div class="calender-container">
+					<div class="calender">
+						<div class="current-date">
+							<i class="fa-solid fa-arrow-left arrow left"></i>
+							<div class="date"><span class="current-year"></span
+								><span class="current-month"></span></div>
+							
+							<i class="fa-solid fa-arrow-right arrow right"></i>
+						</div>
+						<div class="days-container">
+							<div class="days">
+								<div class="day-title">Sun</div>
+								<div class="day-title">Mon</div>
+								<div class="day-title">Tue</div>
+								<div class="day-title">Wed</div>
+								<div class="day-title">Thur</div>
+								<div class="day-title">Fri</div>
+								<div class="day-title">Sat</div>
+							</div>
+						</div>
+						
+						<div class="days-table"> </div>
+					</div>
+				</div>
+				<div class="tasks-bar">
+					<div class="tasks-container">
+						<div class="task-card-container">
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="calender.js"></script>
+	</body>
+</html>
