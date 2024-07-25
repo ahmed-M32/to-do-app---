@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+			integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer" />
+
+            <link rel="stylesheet" href="edit.css" />
+            <link rel="stylesheet" href="style.css" />
+
+            <title>Edit tasks</title>
+	</head>
+	<body>
+        <div class="container">
+            <div class="nav">
+				<div class="home icon-container">
+					<i class="fa-solid fa-house home-icon icon home"></i>
+					<span class="home-title">Home</span>
+				</div>
+				<div
+					class="upcoming icon-container"
+					onclick="window.location ='task.html' ">
+					<i class="fa-solid fa-clock upcoming-icon icon"></i
+					><span class="upcoming-title"> Add Tasks</span>
+				</div>
+				<div class="list icon-container" onclick="window.location ='edit.html' ">
+					<i class="fa-solid fa-list-check icon"></i>
+					<span class="home-title">Tasks</span>
+				</div>
+			</div>
+        </div>
+		<script src="edit.js"></script>
+	</body>
+</html>

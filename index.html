@@ -17,7 +17,7 @@
 		<div class="container">
 			<div class="nav">
 				<div class="home icon-container">
-					<i class="fa-solid fa-house home-icon icon"></i>
+					<i class="fa-solid fa-house home-icon icon home"></i>
 					<span class="home-title">Home</span>
 				</div>
 				<div
@@ -26,15 +26,21 @@
 					<i class="fa-solid fa-clock upcoming-icon icon"></i
 					><span class="upcoming-title"> Add Tasks</span>
 				</div>
+				<div class="list icon-container" onclick="window.location ='edit.html' ">
+					<i class="fa-solid fa-list-check icon"></i>
+					<span class="home-title">Tasks</span>
+				</div>
 			</div>
 			<div class="main-page">
 				<div class="calender-container">
 					<div class="calender">
 						<div class="current-date">
 							<i class="fa-solid fa-arrow-left arrow left"></i>
-							<div class="date"><span class="current-year"></span
-								><span class="current-month"></span></div>
-							
+							<div class="date">
+								<span class="current-year"></span
+								><span class="current-month"></span>
+							</div>
+
 							<i class="fa-solid fa-arrow-right arrow right"></i>
 						</div>
 						<div class="days-container">
@@ -48,15 +54,18 @@
 								<div class="day-title">Sat</div>
 							</div>
 						</div>
-						
-						<div class="days-table"> </div>
+
+						<div class="days-table"></div>
 					</div>
 				</div>
-				<div class="tasks-bar">
-					<div class="tasks-container">
-						<div class="task-card-container">
-
+				<div class="second-half">
+					<div class="tasks-bar">
+						<div class="tasks-container">
+							<div class="task-card-container"></div>
 						</div>
+					</div>
+					<div class="buttons">
+						<button class="edit" onclick =" window.location='edit.html'">Edit or Delete Task</button>
 					</div>
 				</div>
 			</div>

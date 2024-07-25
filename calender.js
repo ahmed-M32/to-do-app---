@@ -46,18 +46,31 @@ function setMonth() {
 	year.innerHTML = currentYear;
 	month.innerHTML = `${months[currentMonth]}`;
 
-	console.log(monthLength, paddingDays, currentMonth);
+	console.log(currentDay, currentDayNum);
 	table.innerHTML = "";
 	for (let i = paddingDays; i > 0; i--) {
 		let dayBlock = document.createElement("div");
+		let dateStr = new Date(currentYear, currentMonth, i)
+			.toLocaleDateString()
+			.split("/")
+			.join("");
+		dayBlock.classList.add(dateStr);
 		dayBlock.className = "day";
 		dayBlock.classList.add("padding");
+
+		console.log(dateStr);
 		dayBlock.innerHTML = `${lastDayOfLastMonth - i + 1}`;
 		table.append(dayBlock);
 	}
 	for (let i = 1; i < monthLength + 1; i++) {
 		let dayBlock = document.createElement("div");
 		dayBlock.className = "day";
+		let dateStr = new Date(currentYear, currentMonth, i)
+			.toLocaleDateString()
+			.split("/")
+			.join("");
+		console.log(dateStr);
+		dayBlock.classList.add(dateStr);
 		if (
 			i == currentDayNum &&
 			currentMonth == new Date().getMonth() &&
@@ -71,12 +84,17 @@ function setMonth() {
 	for (let i = 0; i < 42 - (paddingDays + monthLength); i++) {
 		let dayBlock = document.createElement("div");
 		dayBlock.className = "day";
+		let dateStr = new Date(currentYear, currentMonth, i)
+			.toLocaleDateString()
+			.split("/")
+			.join("");
+		console.log(dateStr);
+		dayBlock.classList.add(dateStr);
 
 		dayBlock.classList.add("padding");
 		dayBlock.innerHTML = `${i + 1}`;
 		table.append(dayBlock);
 	}
-
 
 	let days = document.querySelectorAll(".day");
 	let taskContainer = document.querySelector(".task-card-container");
@@ -85,17 +103,38 @@ function setMonth() {
 		day.addEventListener("click", (e) => {
 			let taskCard = document.createElement("div");
 			let taskCardHeader = document.createElement("div");
+
+
 			taskCardHeader.innerHTML = `Day ${e.target.innerHTML} Task`;
 			taskCardHeader.classList.add("task-header");
-
+			console.log(day.classList);
 			taskCard.classList.add("task-card");
 			taskCard.classList.add(`${e.target.innerHTML}`);
 			taskContainer.innerHTML = "";
 
 			taskCard.append(taskCardHeader);
+			let tasksArray = JSON.parse(localStorage.getItem("tasks"));
+			tasksArray.forEach((task) => {
+				if (day.classList.contains(task.date)) {
+					let newTask = document.createElement("div");
+					let taskTitle= document.createElement("div");
+					let taskDescription = document.createElement("div");
+
+					taskTitle.classList.add("task-card-title")
+					taskDescription.classList.add("task-card-desc")
+					taskTitle.innerHTML = task.title;
+					taskDescription.innerHTML = task.description;
+					newTask.classList.add("tasksss");
+
+					newTask.append(taskTitle)
+					newTask.append(taskDescription)
+					taskCard.append(newTask);
+				}
+			});
 			taskContainer.append(taskCard);
 		});
 	});
+
 }
 setMonth();
 
@@ -118,3 +157,5 @@ left.addEventListener("click", () => {
 	}
 	setMonth();
 });
+
+
